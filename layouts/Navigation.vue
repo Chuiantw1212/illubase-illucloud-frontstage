@@ -34,12 +34,14 @@
                                 placeholder="Search"
                                 aria-label="Search"
                             />
-                            <button
+                            <router-link
                                 class="btn btn-outline-success my-2 my-sm-0"
-                                type="submit"
+                                :to="'/search'"
+                                tag="button"
+                                :active-class="'active'"
                             >
                                 Search
-                            </button>
+                            </router-link>
                         </form>
                     </li>
                     <li>
@@ -79,10 +81,7 @@
                                 >
                                     個人頁面
                                 </router-link>
-                                <router-link
-                                    class="dropdown-item"
-                                    :to="'/'"
-                                >
+                                <router-link class="dropdown-item" :to="'/'">
                                     登出
                                 </router-link>
                             </div>

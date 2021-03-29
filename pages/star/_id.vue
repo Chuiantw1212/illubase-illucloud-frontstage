@@ -13,10 +13,10 @@
                 <button
                     type="button"
                     class="btn btn-primary"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
+                    data-toggle="modal"
+                    data-target="#exampleModal"
                 >
-                    Launch demo modal
+                    建立貼文
                 </button>
 
                 <!-- Modal -->
@@ -24,33 +24,41 @@
                     class="modal fade"
                     id="exampleModal"
                     tabindex="-1"
+                    role="dialog"
                     aria-labelledby="exampleModalLabel"
                     aria-hidden="true"
                 >
-                    <div class="modal-dialog">
+                    <div
+                        class="modal-dialog modal-dialog-scrollable"
+                        role="document"
+                    >
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">
-                                    Modal title
+                                    模仿FB建立貼文
                                 </h5>
                                 <button
                                     type="button"
-                                    class="btn-close"
-                                    data-bs-dismiss="modal"
+                                    class="close"
+                                    data-dismiss="modal"
                                     aria-label="Close"
-                                ></button>
+                                >
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
-                            <div class="modal-body">...</div>
+                            <div class="modal-body">
+                                <textarea class="w-100"></textarea>
+                            </div>
                             <div class="modal-footer">
                                 <button
                                     type="button"
                                     class="btn btn-secondary"
-                                    data-bs-dismiss="modal"
+                                    data-dismiss="modal"
                                 >
-                                    Close
+                                    取消
                                 </button>
                                 <button type="button" class="btn btn-primary">
-                                    Save changes
+                                    發布
                                 </button>
                             </div>
                         </div>
@@ -61,7 +69,7 @@
         <section class="jumbotron text-center">
             <div class="container">
                 <h1 class="jumbotron-heading">朱老闆的財傷桌遊</h1>
-                <p class="lead text-muted">超大的畫布，繪師應該會很愛？</p>
+                <p class="lead text-muted">模仿Pinkoi超大的畫布，繪師應該會很愛？</p>
             </div>
         </section>
         <div class="container">

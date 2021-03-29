@@ -3,4 +3,5 @@
  */
  if (process.client) {
     require('bootstrap')
+    require('popper.js')
 }
