@@ -28,10 +28,7 @@
                     aria-labelledby="exampleModalLabel"
                     aria-hidden="true"
                 >
-                    <div
-                        class="modal-dialog modal-dialog-scrollable"
-                        role="document"
-                    >
+                    <div class="modal-dialog-scrollable" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">
@@ -47,7 +44,11 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <textarea class="w-100"></textarea>
+                                <InputTextField
+                                    v-model="title"
+                                    title="貼文標題"
+                                ></InputTextField>
+                                <InputUpload v-model="image"></InputUpload>
                             </div>
                             <div class="modal-footer">
                                 <button
@@ -57,7 +58,11 @@
                                 >
                                     取消
                                 </button>
-                                <button type="button" class="btn btn-primary">
+                                <button
+                                    type="button"
+                                    class="btn btn-primary"
+                                    @click="submitPost()"
+                                >
                                     發布
                                 </button>
                             </div>
@@ -69,7 +74,9 @@
         <section class="jumbotron text-center">
             <div class="container">
                 <h1 class="jumbotron-heading">朱老闆的財傷桌遊</h1>
-                <p class="lead text-muted">模仿Pinkoi超大的畫布，繪師應該會很愛？</p>
+                <p class="lead text-muted">
+                    模仿Pinkoi超大的畫布，繪師應該會很愛？
+                </p>
             </div>
         </section>
         <div class="container">
@@ -87,15 +94,31 @@
 </template>
 <script>
 import $ from 'jquery'
+import * as firebase from "firebase/app";
 export default {
     components: {
         Carousel: () => import('@/components/Carousel.vue'),
         PostPreview: () => import('@/components/PostPreview.vue')
     },
+    data: function () {
+        return {
+            title: '',
+            image: ''
+        }
+    },
     mounted() {
-        // $('#myModal').on('shown.bs.modal', function () {
-        //     $('#myInput').trigger('focus')
-        // })
+        firebase.auth().onAuthStateChanged((user) => {
+            // if (!user) {
+            //     this.$router.push({
+            //         name: 'login'
+            //     })
+            // }
+        });
+    },
+    methods: {
+        submitPost() {
+
+        }
     }
 }
 </script>

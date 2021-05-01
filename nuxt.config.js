@@ -18,7 +18,8 @@ export default {
         media: 'screen',
         defer: true
       },
-    ]
+      { rel: 'stylesheet', href: 'http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css' }
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
